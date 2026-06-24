@@ -30,3 +30,7 @@
 {"timestamp": "2026-06-24T08:17:25.726556Z", "class": "person", "confidence": 0.8668, "bbox": [127, 107, 639, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_081725_person.jpg"}
 {"timestamp": "2026-06-24T08:21:46.616658Z", "class": "person", "confidence": 0.847, "bbox": [155, 124, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082146_person.jpg"}
 {"timestamp": "2026-06-24T08:22:16.654750Z", "class": "person", "confidence": 0.8708, "bbox": [149, 145, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082216_person.jpg"}
+{"timestamp": "2026-06-24T08:22:46.732413Z", "class": "person", "confidence": 0.8409, "bbox": [149, 138, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082246_person.jpg"}
+{"timestamp": "2026-06-24T08:23:16.761829Z", "class": "person", "confidence": 0.8937, "bbox": [151, 154, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082316_person.jpg"}
+{"timestamp": "2026-06-24T08:23:46.804791Z", "class": "person", "confidence": 0.8607, "bbox": [160, 137, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082346_person.jpg"}
+{"timestamp": "2026-06-24T08:24:16.879105Z", "class": "person", "confidence": 0.7959, "bbox": [160, 137, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082416_person.jpg"}
