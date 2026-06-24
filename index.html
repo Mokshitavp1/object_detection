@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Detection — Live Dashboard</title>
+  <style>
+    /* ── Reset & tokens ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f172a;
+      --surface:  #1e293b;
+      --surface2: #162032;
+      --border:   #334155;
+      --text:     #f1f5f9;
+      --muted:    #64748b;
+      --accent:   #3b82f6;
+      --green:    #22c55e;
+      --mono:     "Courier New", Courier, monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Top bar ──────────────────────────────────────────────────── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      height: 44px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      gap: 12px;
+    }
+    .topbar-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .topbar-sep { width: 1px; height: 16px; background: var(--border); }
+    .stream-indicator {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .stream-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .stream-dot.live {
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+      animation: blink 2.4s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.35; }
+    }
+    .topbar-clock {
+      margin-left: auto;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Main split ───────────────────────────────────────────────── */
+    main { display: flex; flex: 1; min-height: 0; }
+
+    /* ── Feed column ──────────────────────────────────────────────── */
+    .col-feed {
+      width: 60%;
+      flex-shrink: 0;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      gap: 8px;
+      min-height: 0;
+    }
+    .col-label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* Feed wrapper with corner-bracket reticle */
+    .feed-frame {
+      position: relative;
+      flex: 1;
+      background: #000;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 0;
+    }
+    #feed { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    /* Four corner brackets via pseudo-elements + two child spans */
+    .feed-frame::before,
+    .feed-frame::after,
+    .feed-frame .cbr,
+    .feed-frame .cbl {
+      content: "";
+      position: absolute;
+      width: 22px; height: 22px;
+      border-style: solid;
+      border-color: var(--accent);
+      opacity: 0.55;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .feed-frame::before { top: 10px;    left: 10px;  border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
+    .feed-frame::after  { top: 10px;    right: 10px; border-width: 2px 2px 0 0; border-radius: 0 2px 0 0; }
+    .feed-frame .cbr    { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
+    .feed-frame .cbl    { bottom: 10px; left: 10px;  border-width: 0 0 2px 2px; border-radius: 0 0 0 2px; }
+
+    /* ── Dashboard column ─────────────────────────────────────────── */
+    .col-dash {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      gap: 12px;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* Stat cards */
+    .stat-row { display: flex; gap: 8px; flex-shrink: 0; }
+    .stat-card {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .stat-label {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .stat-value.accent { color: var(--accent); }
+    .stat-value.mono   { font-family: var(--mono); font-size: 1rem; }
+
+    /* Filter */
+    .filter-bar { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .filter-bar label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    #classFilter {
+      flex: 1;
+      appearance: none;
+      background: var(--surface)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E")
+        no-repeat right 10px center;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text);
+      padding: 6px 28px 6px 10px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    #classFilter:focus { border-color: var(--accent); }
+    #classFilter option { background: var(--surface); }
+
+    /* Event log */
+    .log-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .log-head {
+      padding: 7px 12px;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .table-scroll { overflow-y: auto; flex: 1; }
+    .table-scroll::-webkit-scrollbar { width: 4px; }
+    .table-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .table-scroll::-webkit-scrollbar-track { background: transparent; }
+
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      position: sticky; top: 0;
+      background: var(--surface);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 6px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr { transition: background 0.1s; }
+    tbody tr:nth-child(even) { background: var(--surface2); }
+    tbody tr:hover { background: #1d3355; }
+    tbody td {
+      padding: 6px 10px;
+      font-size: 0.76rem;
+      border-bottom: 1px solid rgba(51,65,85,0.3);
+      vertical-align: middle;
+    }
+    .td-time, .td-conf { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
+    .td-class          { font-weight: 600; color: var(--accent); }
+    .snap-img {
+      width: 48px; height: 48px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+    .snap-nil { color: var(--muted); }
+    .empty-msg { text-align: center; padding: 28px; color: var(--muted); font-size: 0.78rem; }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      body { height: auto; overflow: auto; }
+      main { flex-direction: column; }
+      .col-feed { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+      .feed-frame { aspect-ratio: 16 / 9; height: auto; }
+      #feed { height: auto; }
+      .col-dash { overflow: visible; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stream-dot.live { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar-title">Detection Dashboard</span>
+  <div class="topbar-sep"></div>
+  <div class="stream-indicator">
+    <div class="stream-dot" id="streamDot"></div>
+    <span id="streamLabel">CONNECTING</span>
+  </div>
+  <span class="topbar-clock" id="clock"></span>
+</header>
+
+<main>
+
+  <!-- 60% – live feed -->
+  <section class="col-feed">
+    <span class="col-label">Live Feed</span>
+    <div class="feed-frame">
+      <span class="cbr"></span>
+      <span class="cbl"></span>
+      <img id="feed" src="/video_feed" alt="Live camera feed" />
+    </div>
+  </section>
+
+  <!-- 40% – dashboard -->
+  <section class="col-dash">
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-label">Detections Today</div>
+        <div class="stat-value accent" id="statTotal">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Top Class</div>
+        <div class="stat-value" id="statTopClass">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Last Seen</div>
+        <div class="stat-value mono" id="statLastSeen">—</div>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <label for="classFilter">Filter by class</label>
+      <select id="classFilter">
+        <option value="">All Classes</option>
+      </select>
+    </div>
+
+    <div class="log-panel">
+      <div class="log-head">Event Log</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th><th>Class</th><th>Confidence</th><th>Snapshot</th>
+            </tr>
+          </thead>
+          <tbody id="eventBody">
+            <tr><td colspan="4" class="empty-msg">Waiting for detections…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<script>
+  // Clock
+  const clockEl = document.getElementById('clock');
+  function tick() { clockEl.textContent = new Date().toTimeString().slice(0, 8); }
+  tick(); setInterval(tick, 1000);
+
+  // Stream indicator — img streams natively; JS never touches src
+  const feedImg     = document.getElementById('feed');
+  const streamDot   = document.getElementById('streamDot');
+  const streamLabel = document.getElementById('streamLabel');
+  feedImg.addEventListener('load',  () => { streamDot.classList.add('live');    streamLabel.textContent = 'LIVE'; });
+  feedImg.addEventListener('error', () => { streamDot.classList.remove('live'); streamLabel.textContent = 'CONNECTING'; });
+
+  // Helpers
+  function toHMS(iso) {
+    if (!iso) return '—';
+    const d = new Date(iso.endsWith('Z') ? iso : iso + 'Z');
+    return d.toTimeString().slice(0, 8);
+  }
+  function toPct(c) { return Number.isFinite(c) ? Math.round(c * 100) + '%' : '—'; }
+
+  // Stats
+  async function fetchStats() {
+    try {
+      const r = await fetch('/stats');
+      if (!r.ok) return;
+      const d = await r.json();
+      document.getElementById('statTotal').textContent    = d.total_today ?? '0';
+      document.getElementById('statTopClass').textContent = d.most_seen_class ?? '—';
+      document.getElementById('statLastSeen').textContent = toHMS(d.last_detection_time);
+    } catch (_) {}
+  }
+
+  // Events
+  const classFilter = document.getElementById('classFilter');
+  const eventBody   = document.getElementById('eventBody');
+  let knownClasses  = new Set();
+
+  async function fetchEvents() {
+    const cls = classFilter.value;
+    const qs  = cls ? `?class=${encodeURIComponent(cls)}&limit=50` : '?limit=50';
+    try {
+      const r      = await fetch('/events' + qs);
+      if (!r.ok) return;
+      const events = await r.json();   // newest-first from server
+
+      if (!cls) {
+        events.forEach(e => e.class && knownClasses.add(e.class));
+        syncDropdown();
+      }
+
+      renderTable(events.slice(0, 20));
+    } catch (_) {}
+  }
+
+  function syncDropdown() {
+    const saved = classFilter.value;
+    while (classFilter.options.length > 1) classFilter.remove(1);
+    [...knownClasses].sort().forEach(c => {
+      classFilter.add(new Option(c[0].toUpperCase() + c.slice(1), c));
+    });
+    classFilter.value = saved;
+  }
+
+  function renderTable(events) {
+    if (!events.length) {
+      eventBody.innerHTML = '<tr><td colspan="4" class="empty-msg">No detections match this filter.</td></tr>';
+      return;
+    }
+    eventBody.innerHTML = events.map(e => {
+      const snap = e.snapshot
+        ? `<a href="/snapshots/${e.snapshot}" target="_blank" rel="noopener">
+             <img class="snap-img" src="/snapshots/${e.snapshot}" alt="${e.class}" loading="lazy">
+           </a>`
+        : '<span class="snap-nil">—</span>';
+      return `<tr>
+        <td class="td-time">${toHMS(e.timestamp)}</td>
+        <td class="td-class">${e.class ?? '—'}</td>
+        <td class="td-conf">${toPct(e.confidence)}</td>
+        <td>${snap}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  classFilter.addEventListener('change', fetchEvents);
+
+  // Boot
+  fetchStats();
+  fetchEvents();
+  setInterval(fetchStats,  10_000);
+  setInterval(fetchEvents,  5_000);
+</script>
+
+</body>
+</html>
