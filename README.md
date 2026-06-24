@@ -2,12 +2,6 @@
 
 Real-time object detection with a live browser dashboard, built on YOLOv8, OpenCV, and FastAPI.
 
-## Demo
-
-![demo](docs/demo.gif)
-
-> Add a screen recording as `docs/demo.gif` before publishing.
-
 ## Features
 
 - Real-time webcam (or RTSP) capture with YOLOv8n inference on every motion-triggered frame
