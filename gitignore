@@ -1,0 +1,30 @@
+# Credentials and secrets
+.env
+
+# Detection output (auto-generated at runtime)
+snapshots/
+events.jsonl
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
+
+# macOS metadata
+.DS_Store
+
+# Package build artifacts
+*.egg-info/
+dist/
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+
+# YOLOv8 model weights (downloaded automatically on first run)
+*.pt
