@@ -28,3 +28,5 @@
 {"timestamp": "2026-06-24T08:16:54.089978Z", "class": "dog", "confidence": 0.6539, "bbox": [2, 227, 634, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_081654_dog.jpg"}
 {"timestamp": "2026-06-24T08:16:55.674406Z", "class": "person", "confidence": 0.7381, "bbox": [0, 48, 539, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_081655_person.jpg"}
 {"timestamp": "2026-06-24T08:17:25.726556Z", "class": "person", "confidence": 0.8668, "bbox": [127, 107, 639, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_081725_person.jpg"}
+{"timestamp": "2026-06-24T08:21:46.616658Z", "class": "person", "confidence": 0.847, "bbox": [155, 124, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082146_person.jpg"}
+{"timestamp": "2026-06-24T08:22:16.654750Z", "class": "person", "confidence": 0.8708, "bbox": [149, 145, 638, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_082216_person.jpg"}
