@@ -10,7 +10,8 @@ from ultralytics import YOLO
 
 LOCATION_API_URL = "http://ip-api.com/json"
 LOCATION_TIMEOUT = 5
-
+# pyrefly: ignore [missing-import]
+from motion import MotionDetector
 
 def load_config(path: Path) -> dict:
     if not path.exists():
@@ -103,11 +104,14 @@ def main() -> None:
     model = YOLO("yolov8n.pt")          # downloads on first run
     cap = open_camera(config["camera_source"])
     cooldowns: dict[str, float] = {}
+    motion = MotionDetector(pixel_threshold=config.get("motion_threshold", 5000))
     try:
         while True:
             ret, frame = cap.read()
             if not ret:
                 print("Failed to grab frame — skipping.")
+                continue
+            if not motion.has_motion(frame):
                 continue
             detections = run_inference(frame, model, config)
             frame = draw_boxes(frame, detections)
