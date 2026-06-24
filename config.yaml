@@ -3,3 +3,5 @@ confidence_threshold: 0.5
 cooldown_seconds: 30
 camera_source: 0
 save_snapshots: true
+motion_pixel_threshold: 5000
+detection_zone: []
