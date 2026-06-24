@@ -7,11 +7,18 @@ import cv2
 import requests
 import yaml
 from ultralytics import YOLO
+from motion import MotionDetector
+import threading
+from dotenv import load_dotenv
+from alerting import send_alert
+from zone import DetectionZone
+
+load_dotenv()   # loads .env so alerting.py can read SMTP_* vars via os.environ
 
 LOCATION_API_URL = "http://ip-api.com/json"
 LOCATION_TIMEOUT = 5
 # pyrefly: ignore [missing-import]
-from motion import MotionDetector
+
 
 def load_config(path: Path) -> dict:
     if not path.exists():
