@@ -13,6 +13,8 @@ from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from ultralytics import YOLO
+from zone import DetectionZone
+from alerting import send_alert
 
 from detect import (
     draw_boxes,
@@ -37,6 +39,8 @@ frame_lock = Lock()
 def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: float) -> None:
     global latest_frame
     cooldowns: dict[str, float] = {}
+    zone = DetectionZone(config.get("zone_polygon", []))
+
 
     while True:
         try:
@@ -52,6 +56,8 @@ def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: 
 
             now = time.time()
             for det in detections:
+                if not zone.is_inside(det["bbox"]):
+                    continue
                 cls = det["class"]
                 if now - cooldowns.get(cls, 0) < config["cooldown_seconds"]:
                     continue
@@ -60,6 +66,7 @@ def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: 
                 if config.get("save_snapshots"):
                     snap_name = save_snapshot(frame, det, Path("snapshots"))
                 log_event(det, lat, lon, snap_name, Path("events.jsonl"))
+                send_alert(Path("snapshots") / snap_name if snap_name else None, det)
 
         except Exception as e:
             print(f"Detection error: {e}")
