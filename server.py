@@ -4,16 +4,16 @@ import time
 from collections import Counter
 from contextlib import asynccontextmanager
 from datetime import datetime
-from multiprocessing import Process
 from pathlib import Path
 from threading import Lock
 
 import cv2
 from fastapi import FastAPI, Query, Request
-from fastapi.responses import JSONResponse, Response, StreamingResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from ultralytics import YOLO
+
 from motion import MotionDetector
 from zone import DetectionZone
 
@@ -33,10 +33,11 @@ from detect import (
 # ---------------------------------------------------------------------------
 latest_frame: bytes | None = None
 frame_lock = Lock()
-LATEST_FRAME_PATH = Path("snapshots/latest.jpg")
 
 # ---------------------------------------------------------------------------
-# Detection loop — runs in a daemon thread
+# Detection loop — runs in a daemon thread (shares memory with the main process,
+# so `latest_frame` below is visible to the FastAPI routes directly — no file
+# bridge needed).
 # ---------------------------------------------------------------------------
 def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: float) -> None:
     global latest_frame
@@ -58,13 +59,8 @@ def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: 
                 detections = run_inference(frame, model, config)
                 frame = draw_boxes(frame, detections)
 
-            encoded = encode_frame(frame)
             with frame_lock:
-                latest_frame = encoded
-            if encoded:
-                tmp_path = LATEST_FRAME_PATH.with_suffix(".tmp")
-                tmp_path.write_bytes(encoded)
-                tmp_path.replace(LATEST_FRAME_PATH)
+                latest_frame = encode_frame(frame)
 
             now = time.time()
             for det in detections:
@@ -85,27 +81,19 @@ def detection_loop(config: dict, model, cap: cv2.VideoCapture, lat: float, lon: 
             time.sleep(0.5)
 
 
-def detection_worker(config_path: Path = Path("config.yaml")) -> None:
-    cap = None
-    try:
-        config = load_config(config_path)
-        lat, lon = get_location()
-        print(f"Location: {lat}, {lon}")
-        model = YOLO("yolov8n.pt")           # downloads on first run
-        cap = open_camera(config["camera_source"])
-        detection_loop(config, model, cap, lat, lon)
-    except Exception as exc:
-        print(f"Detection worker failed: {exc}")
-    finally:
-        if cap is not None:
-            cap.release()
-
-
-def start_detection(config_path: Path = Path("config.yaml")) -> Process:
-    process = Process(target=detection_worker, args=(config_path,), daemon=True)
-    process.start()
-    print(f"Detection process started with PID {process.pid}.")
-    return process
+def start_detection(config_path: Path = Path("config.yaml")) -> None:
+    config = load_config(config_path)
+    lat, lon = get_location()
+    print(f"Location: {lat}, {lon}")
+    model = YOLO("yolov8n.pt")           # downloads on first run
+    cap = open_camera(config["camera_source"])
+    t = threading.Thread(
+        target=detection_loop,
+        args=(config, model, cap, lat, lon),
+        daemon=True,
+    )
+    t.start()
+    print("Detection thread started.")
 
 # ---------------------------------------------------------------------------
 # FastAPI app + lifespan
@@ -113,15 +101,8 @@ def start_detection(config_path: Path = Path("config.yaml")) -> Process:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Path("snapshots").mkdir(exist_ok=True)
-    detection_process = start_detection(Path("config.yaml"))
-    try:
-        yield
-    finally:
-        if detection_process.is_alive():
-            detection_process.terminate()
-            detection_process.join(timeout=5)
-
-Path("snapshots").mkdir(exist_ok=True)
+    start_detection(Path("config.yaml"))
+    yield
 
 app = FastAPI(lifespan=lifespan)
 app.mount("/snapshots", StaticFiles(directory="snapshots"), name="snapshots")
@@ -134,11 +115,6 @@ def mjpeg_generator():
     while True:
         with frame_lock:
             frame = latest_frame
-        if frame is None and LATEST_FRAME_PATH.exists():
-            try:
-                frame = LATEST_FRAME_PATH.read_bytes()
-            except OSError:
-                frame = None
         if frame is None:
             time.sleep(0.05)
             continue
@@ -157,11 +133,6 @@ def video_feed():
         mjpeg_generator(),
         media_type="multipart/x-mixed-replace; boundary=frame",
     )
-
-
-@app.head("/video_feed")
-def video_feed_head():
-    return Response(media_type="multipart/x-mixed-replace; boundary=frame")
 
 
 @app.get("/")

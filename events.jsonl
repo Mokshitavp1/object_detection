@@ -80,3 +80,5 @@
 {"timestamp": "2026-06-24T10:52:48.087084Z", "class": "person", "confidence": 0.7988, "bbox": [234, 250, 617, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_105248_person.jpg"}
 {"timestamp": "2026-06-24T10:53:18.216425Z", "class": "person", "confidence": 0.8125, "bbox": [242, 253, 599, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_105318_person.jpg"}
 {"timestamp": "2026-06-24T10:53:48.302906Z", "class": "person", "confidence": 0.8392, "bbox": [23, 147, 571, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_105348_person.jpg"}
+{"timestamp": "2026-06-24T12:08:14.971012Z", "class": "person", "confidence": 0.7882, "bbox": [151, 190, 633, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_120814_person.jpg"}
+{"timestamp": "2026-06-24T12:08:48.333879Z", "class": "person", "confidence": 0.7904, "bbox": [64, 159, 629, 479], "lat": 0.0, "lon": 0.0, "camera_id": "cam_0", "snapshot": "snap_20260624_120848_person.jpg"}

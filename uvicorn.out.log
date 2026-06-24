@@ -1,4 +1,403 @@
-Detection process started with PID 5780.
-INFO:     127.0.0.1:60066 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60070 - "HEAD /video_feed HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60072 - "GET /stats HTTP/1.1" 200 OK
+[WARNING] Could not determine location: HTTPConnectionPool(host='ip-api.com', port=80): Max retries exceeded with url: /json (Caused by NameResolutionError("HTTPConnection(host='ip-api.com', port=80): Failed to resolv[WARNING] Could not determine location: HTTPConnectionPool(host='ip-api.com', port=80): Max retries exceeded with url: /json (Caused by NameResolutionError("HTTPConnection(host='ip-api.com', port=80): Failed to resolve 'ip-api.com' ([Errno 11003] getaddrinfo failed)")). Falling back to (0.0, 0.0).
+Location: 0.0, 0.0
+Detection error: [Errno 13] Permission denied: 'snapshots\\latest.tmp'
+Detection error: [Errno 13] Permission denied: 'snapshots\[WARNING] Could not determine location: HTTPConnectionPool(host='ip-api.com', port=80): Max retries exceeded with url: /json (Caused by NameResolutionError("HTTPConnection(host='ip-api.com', port=80): Failed to resolve 'ip-api.com' ([Errno 11003] getaddrinfo failed)")). Falling back to (0.0, 0.0).
+Location: 0.0, 0.0
+Detection thread started.
+INFO:     127.0.0.1:65459 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65459 - "GET /video_feed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54936 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_120814_person.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104446_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104446_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104446_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_120848_person.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54936 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59171 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64445 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /events?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105248_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105348_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_105318_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_105218_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105148_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_105118_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_105048_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_105018_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104947_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104917_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104847_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104817_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53208 - "GET /snapshots/snap_20260624_104747_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104717_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54055 - "GET /snapshots/snap_20260624_104617_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54511 - "GET /snapshots/snap_20260624_104647_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50497 - "GET /snapshots/snap_20260624_104546_person.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53836 - "GET /snapshots/snap_20260624_104516_person.jpg HTTP/1.1" 404 Not Found
