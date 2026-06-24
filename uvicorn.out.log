@@ -1,0 +1,4 @@
+Detection process started with PID 5780.
+INFO:     127.0.0.1:60066 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60070 - "HEAD /video_feed HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60072 - "GET /stats HTTP/1.1" 200 OK
