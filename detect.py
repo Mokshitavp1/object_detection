@@ -110,20 +110,28 @@ def main() -> None:
     print(f"Config loaded. Location: {lat}, {lon}")
     model = YOLO("yolov8n.pt")          # downloads on first run
     cap = open_camera(config["camera_source"])
+    motion_detector = MotionDetector(
+    pixel_threshold=config.get("motion_pixel_threshold", 5000))
+    zone = DetectionZone(config.get("detection_zone", []))
     cooldowns: dict[str, float] = {}
-    motion = MotionDetector(pixel_threshold=config.get("motion_threshold", 5000))
+
     try:
         while True:
             ret, frame = cap.read()
             if not ret:
                 print("Failed to grab frame — skipping.")
                 continue
-            if not motion.has_motion(frame):
-                continue
+            if not motion_detector.has_motion(frame):
+                cv2.imshow("Detection Feed", frame)      # still show the raw frame
+                if cv2.waitKey(1) & 0xFF == ord("q"):
+                    break
+                continue                                 # skip inference entirely
             detections = run_inference(frame, model, config)
             frame = draw_boxes(frame, detections)
             now = time.time()
             for det in detections:
+                if not zone.is_inside(det["bbox"]):     # NEW: zone filter
+                    continue
                 cls = det["class"]
                 if now - cooldowns.get(cls, 0) < config["cooldown_seconds"]:
                     continue
@@ -132,6 +140,13 @@ def main() -> None:
                 if config.get("save_snapshots"):
                     snap_name = save_snapshot(frame, det, Path("snapshots"))
                 log_event(det, lat, lon, snap_name, Path("events.jsonl"))
+                if cls == "person":                     # NEW: email alert
+                    snap_path = Path("snapshots") / snap_name if snap_name else None
+                    threading.Thread(
+                        target=send_alert,
+                        args=(snap_path, det),
+                        daemon=True
+                    ).start()
             cv2.imshow("Detection Feed", frame)
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
