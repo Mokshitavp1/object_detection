@@ -36,7 +36,7 @@ def get_location() -> tuple[float, float]:
 
 
 def open_camera(source: int | str) -> cv2.VideoCapture:
-    cap = cv2.VideoCapture(source)
+    cap = cv2.VideoCapture(source, cv2.CAP_DSHOW)
     if not cap.isOpened():
         raise RuntimeError(f"Cannot open camera source: {source}")
     return cap
